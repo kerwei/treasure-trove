@@ -2,7 +2,6 @@ import argparse
 import time
 
 N = 100
-res = []
 round2=lambda x, y=None: round(x+1e-15, y)
 
 def startcount(n):
@@ -12,6 +11,7 @@ def startcount(n):
     impossible for any numbers above n/2 to be able to sum up to exactly n.
     However, this does not make a difference in computation speed.
     """
+    res = []
     for i in range (1, int(n/2)):
         rsum = []
         while i < int(n/2):
@@ -22,6 +22,8 @@ def startcount(n):
             elif sum(rsum) > n:
                 break
             i += 1
+
+    return res
 
 
 def whilecount(n):
@@ -42,6 +44,7 @@ def whilecount(n):
     symmetric principle cannot be satisfied after that limit. This effectively
     sets the number of iteration to a maximum of root(2n)
     """
+    res = []
     # Consecutive numbers has a minimum length of 2
     i = 2
     # Numerical center of the subset
@@ -64,6 +67,7 @@ def whilecount(n):
         i += 1
         avg = int(n/i)
 
+    return res
 
 
 if __name__ == '__main__':
@@ -75,6 +79,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     stime = time.perf_counter()
     # startcount(args.range)
-    whilecount(args.range)
+    res = whilecount(args.range)
     elapsed = time.perf_counter() - stime
     print('Sets: %s\nElapsed: %s seconds' % (str(len(res)), str(elapsed)))
