@@ -7,3 +7,5 @@ otherwise.
 ## Contents
 1. consecutivesum - Returns the number of possible subset of integers that sum
 up to _exactly_ n, for a given range of positive integers from 1 to n.
+
+2. lookandsay - Prints the n-th term of the look-and-say sequence.
