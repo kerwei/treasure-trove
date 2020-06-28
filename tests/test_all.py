@@ -1,8 +1,11 @@
-import unittest
+import unittest2
+
 from consecutivesum import whilecount
 from lookandsay import lookandsay
+from nondivisor import solve
 
-class TestConsecSum(unittest.TestCase):
+
+class TestConsecSum(unittest2.TestCase):
     def setUp(self):
         pass
 
@@ -10,7 +13,7 @@ class TestConsecSum(unittest.TestCase):
         self.assertEqual(whilecount(103), [[51,52]])
 
 
-class TestLookAndSay(unittest.TestCase):
+class TestLookAndSay(unittest2.TestCase):
     def setUp(self):
         pass
 
@@ -22,3 +25,11 @@ class TestLookAndSay(unittest.TestCase):
 
     def test_simple(self):
         self.assertEqual(lookandsay(10), '13211311123113112211')
+
+
+class TestNonDivisor(unittest2.TestCase):
+    def test_simple(self):
+        self.assertEqual(solve([3, 1, 2, 3, 6]), [2, 4, 3, 2, 0])
+
+    def test_small(self):
+        self.assertEqual(solve([2, 4]), [1, 0])
