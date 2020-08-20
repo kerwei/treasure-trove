@@ -2,6 +2,7 @@ import unittest2
 
 from consecutivesum import whilecount
 from lookandsay import lookandsay
+from maxproduct import maxproduct
 from nondivisor import solve
 
 
@@ -33,3 +34,16 @@ class TestNonDivisor(unittest2.TestCase):
 
     def test_small(self):
         self.assertEqual(solve([2, 4]), [1, 0])
+
+class TestMaxProduct(unittest2.TestCase):
+    def test_small_even(self):
+        self.assertEqual(maxproduct(4), 4)
+
+    def test_small_odd(self):
+        self.assertEqual(maxproduct(5), 6)
+
+    def test_even(self):
+        self.assertEqual(maxproduct(8), 18)
+
+    def test_odd(self):
+        self.assertEqual(maxproduct(9), 27)
