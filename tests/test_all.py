@@ -1,6 +1,7 @@
 import unittest2
 
 from consecutivesum import whilecount
+from distinctslice import distinct_slice
 from lookandsay import lookandsay
 from maxproduct import maxproduct
 from nondivisor import solve
@@ -47,3 +48,26 @@ class TestMaxProduct(unittest2.TestCase):
 
     def test_odd(self):
         self.assertEqual(maxproduct(9), 27)
+
+class TestDistinctSlice(unittest2.TestCase):
+    def setUp(self) -> None:
+        pass
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_simple(self) -> None:
+        A = [3, 4, 5, 5, 2]
+        self.assertEqual(distinct_slice(6, A), 9)
+
+    def test_single(self) -> None:
+        A = [2, 2, 2, 2, 2]
+        self.assertEqual(distinct_slice(2, A), 5)
+
+    def test_pair(self) -> None:
+        A = [2, 3]
+        self.assertEqual(distinct_slice(3, A), 3)
+
+    def test_alternate(self) -> None:
+        A = [2, 3, 2, 3]
+        self.assertEqual(distinct_slice(3, A), 7)
