@@ -5,6 +5,7 @@ from distinctslice import distinct_slice
 from lookandsay import lookandsay
 from maxproduct import maxproduct
 from nondivisor import solve
+from minabssum import components
 
 
 class TestConsecSum(unittest.TestCase):
@@ -60,4 +61,5 @@ class TestDistinctSlice(unittest.TestCase):
 
 class TestMinAbsSum(unittest.TestCase):
     def test_simple(self):
-        pass
+        A = [1, 2, 5, 3, 4, 5, 2]
+        self.assertEqual(components(A), 0)
