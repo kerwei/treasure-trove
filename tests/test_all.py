@@ -8,17 +8,10 @@ from nondivisor import solve
 
 
 class TestConsecSum(unittest2.TestCase):
-    def setUp(self):
-        pass
-
     def test_simple(self):
         self.assertEqual(whilecount(103), [[51,52]])
 
-
 class TestLookAndSay(unittest2.TestCase):
-    def setUp(self):
-        pass
-
     def test_negative(self):
         with self.assertRaises(ValueError): lookandsay(-1)
 
@@ -27,7 +20,6 @@ class TestLookAndSay(unittest2.TestCase):
 
     def test_simple(self):
         self.assertEqual(lookandsay(10), '13211311123113112211')
-
 
 class TestNonDivisor(unittest2.TestCase):
     def test_simple(self):
@@ -50,12 +42,6 @@ class TestMaxProduct(unittest2.TestCase):
         self.assertEqual(maxproduct(9), 27)
 
 class TestDistinctSlice(unittest2.TestCase):
-    def setUp(self) -> None:
-        pass
-
-    def tearDown(self) -> None:
-        pass
-
     def test_simple(self) -> None:
         A = [3, 4, 5, 5, 2]
         self.assertEqual(distinct_slice(6, A), 9)
