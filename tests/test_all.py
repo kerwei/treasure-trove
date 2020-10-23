@@ -3,6 +3,7 @@ import unittest
 from consecutivesum import whilecount
 from distinctslice import distinct_slice
 from lookandsay import lookandsay
+from maxconsecsum import maxconsecsum
 from maxproduct import maxproduct
 from nondivisor import solve
 from minabssum import components
@@ -63,3 +64,24 @@ class TestMinAbsSum(unittest.TestCase):
     def test_simple(self):
         A = [1, 2, 5, 3, 4, 5, 2]
         self.assertEqual(components(A), 0)
+
+class TestMaxConsecSum(unittest.TestCase):
+    def setUp(self) -> None:
+        pass
+
+    def test_simple_one(self) -> None:
+        A = [1, -2, 0, 9, -1, -2]
+        self.assertEqual(maxconsecsum(A), 8)
+
+    def test_simple_two(self) -> None:
+        A = [-1, -2, 0, 9, -1, -2]
+        self.assertEqual(maxconsecsum(A), 6)
+
+    def test_negative_one(self) -> None:
+        A = [-1, -2, -1, -1, -2, -1, -9, -2]
+        self.assertEqual(maxconsecsum(A), -4)
+
+    def test_negative_two(self) -> None:
+        # A = [-2] * 8
+        A = [-1, -3, -3, -4, -5, -6, -7, -1, -1]
+        self.assertEqual(maxconsecsum(A), -5)
