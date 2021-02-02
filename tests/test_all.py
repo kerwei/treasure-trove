@@ -5,8 +5,9 @@ from distinctslice import distinct_slice
 from lookandsay import lookandsay
 from maxconsecsum import maxconsecsum
 from maxproduct import maxproduct
-from nondivisor import solve
 from minabssum import components
+from nondivisor import solve
+from passwordcombo import password
 
 
 class TestConsecSum(unittest.TestCase):
@@ -85,3 +86,24 @@ class TestMaxConsecSum(unittest.TestCase):
         # A = [-2] * 8
         A = [-1, -3, -3, -4, -5, -6, -7, -1, -1]
         self.assertEqual(maxconsecsum(A), -5)
+
+
+class TestPasswordCombo(unittest.TestCase):
+    """
+    Return all possible combinations of a password from list. Where two or
+    more element words are combined, they are concatenated by an underscore
+    """
+    def test_simple_one(self):
+        A = ['one', 'list', 'A', 'of', 'random', 'words', 'four']
+        self.assertListEqual(password(A, 6), [
+            'A_of_A',
+            'of_A_A',
+            'A_A_of',
+            'random',
+            'of_one',
+            'one_of',
+            'list_A',
+            'four_A',
+            'A_list',
+            'A_four'
+        ])
